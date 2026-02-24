@@ -666,12 +666,21 @@
     },
     {
       "cell_type": "markdown",
+<<<<<<< HEAD
+      "metadata": {},
+=======
       "metadata": {
         "id": "lENCkAUzEKSm"
       },
+>>>>>>> 8652ee0 (Finish off W5)
       "source": [
         "---\n",
         "\n",
+<<<<<<< HEAD
+        "### ✏️ **Exercise 4: Composition**\n",
+        "\n",
+        "**4a)** Create a `Strategy` class with an attribute `approach` (e.g. `\"grassroots\"`, `\"media blitz\"`) and a method `execute()` that prints `\"Running grassroots campaign\"` (using the approach).\n",
+=======
         "Instance methods are functions defined within a class that operate on an instance. They always include self as the first parameter, allowing access to the instance's attributes and other methods.\n",
         "\n"
       ]
@@ -723,6 +732,7 @@
         "    \"\"\"\n",
         "    Defines politician attributes and behaviours.\n",
         "    \"\"\"\n",
+>>>>>>> 8652ee0 (Finish off W5)
         "\n",
         "**4b)** Create a `Campaign` class whose `__init__` takes `candidate_name`, `district`, and a `Strategy` instance. Store the strategy as `self.strategy`.\n",
         "\n",
@@ -730,6 +740,9 @@
         "\n",
         "**4d)** Create two campaigns: one with a grassroots strategy and one with a media blitz strategy. Call `launch()` on each and observe how the same `Campaign` method produces different output depending on which strategy is composed inside.\n",
         "\n",
+<<<<<<< HEAD
+        "**⭐ Extra:** Add a `Budget` class with an attribute `amount` and a method `allocate()` that prints how the budget is distributed. Extend `Campaign` to also hold a `Budget`, and add a `run()` method that calls both `self.strategy.execute()` and `self.budget.allocate()`.\n"
+=======
         "    def __str__(self):\n",
         "        return f\"age: {self.age}, party: {self.party}\"\n",
         "\n",
@@ -745,12 +758,20 @@
         "\n",
         "\n",
         "Politician.show_count()"
+>>>>>>> 8652ee0 (Finish off W5)
       ]
     },
     {
       "cell_type": "code",
       "execution_count": null,
+<<<<<<< HEAD
       "metadata": {},
+=======
+      "metadata": {
+        "cellView": "form",
+        "id": "jr18MzKS9oUG"
+      },
+>>>>>>> 8652ee0 (Finish off W5)
       "outputs": [],
       "source": [
         "# Exercise 4: Your code here\n",
@@ -760,6 +781,13 @@
         "\n",
         "# 4b)\n",
         "\n",
+<<<<<<< HEAD
+        "\n",
+        "# 4c)\n",
+        "\n",
+        "\n",
+        "# 4d)\n",
+=======
         "# 4: Give Robot a __len__() method that returns the number of attributes each instance has.\n",
         "# Print len(robot object) to see the output."
       ]
@@ -780,10 +808,229 @@
       },
       "source": [
         "When one class *inherits* from another, it *takes on the attributes and methods of the first class*. The original class is called the parent class (or superclass), and the new class is the child class (or subclass). The child class can inherit any or all of the attributes and methods of its parent class, but it's also free to define new attributes and methods of its own.\n",
+>>>>>>> 8652ee0 (Finish off W5)
         "\n"
       ]
     },
     {
+<<<<<<< HEAD
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "\n",
+        "# 🏆 **Capstone: Build a Parliament Simulation**\n",
+        "\n",
+        "Now let's combine everything: classes, attributes, methods, inheritance, and composition. You will build a Parliament that can hold a vote on a proposition.\n",
+        "\n",
+        "Here's the system you will construct step by step:\n",
+        "\n",
+        "```\n",
+        "Party  ──(has-a)──▶  Politician  ──(is-a)──▶  President\n",
+        "                         │\n",
+        "                    (has-many)\n",
+        "                         │\n",
+        "                    Parliament\n",
+        "```\n",
+        "\n",
+        "The `Party`, `Politician`, and `President` classes from the demos above are your starting point. Now you need to build `Parliament`.\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "**5a)** Create a `Parliament` class whose `__init__` takes a `proposition` (a string describing a policy, e.g. `\"Increase NHS funding\"`). It should also initialise:\n",
+        "- `self.members` as an empty list\n",
+        "- `self.votes` as an empty list\n",
+        "- A class attribute `max_members = 7`\n",
+        "\n",
+        "**5b)** Add an `add_member(politician)` method that appends a `Politician` (or `President`) to `self.members`. If the member is a `President` (use `isinstance`), also store them as `self.president`.\n",
+        "\n",
+        "**5c)** Add a `hold_vote()` method that loops over `self.members`, calls `cast_vote(self.proposition)` on each, and appends each member's `.vote` to `self.votes`. Return the total number of \"yes\" votes (i.e. `sum(self.votes)`).\n",
+        "\n",
+        "**5d)** Add a `pass_law()` method. If the number of yes votes exceeds `max_members // 2`, return `\"{proposition} is now law!\"`, otherwise return `\"{proposition} was rejected.\"`.\n",
+        "\n",
+        "**5e)** Test your Parliament:\n",
+        "- Create three parties with different policy preferences\n",
+        "- Create 5 politicians belonging to various parties\n",
+        "- Make one of them a `President`\n",
+        "- Add them all to a `Parliament` with a specific proposition\n",
+        "- Hold the vote and attempt to pass the law\n",
+        "- Print the result\n",
+        "\n",
+        "**⭐ Extra:** Add a `__str__()` method to `Parliament` that prints a summary: the proposition, member count, and vote result.\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# Capstone: Your code here\n",
+        "\n",
+        "# Start with the Party and Politician classes from Section 5 above.\n",
+        "# You may copy and extend them.\n",
+        "\n",
+        "# 5a) Parliament class\n",
+        "\n",
+        "\n",
+        "# 5b) add_member()\n",
+        "\n",
+        "\n",
+        "# 5c) hold_vote()\n",
+        "\n",
+        "\n",
+        "# 5d) pass_law()\n",
+        "\n",
+        "\n",
+        "# 5e) Test it\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "\n",
+        "# **6. Modules and Importing** (Demo)\n",
+        "\n",
+        "A **module** in Python is simply a `.py` file containing definitions (functions, classes, variables) that you can **reuse** in other programs.\n",
+        "\n",
+        "By splitting code into modules, you make it easier to organise, test, and maintain larger projects. Import styles:\n",
+        "\n",
+        "```python\n",
+        "import politics as pcs             # import the whole module under an alias\n",
+        "from politics import Politician    # import a specific class\n",
+        "from politics import *             # import everything (not recommended)\n",
+        "```\n",
+        "\n",
+        "This modular approach, combined with OOP, is what makes Python so powerful for building both small scripts and large-scale applications.\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "If we saved all our classes from this session into a file called `politics.py`, we could use them like this:\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "# This cell would work if you have politics.py in the same directory.\n",
+        "# Uncomment to try it:\n",
+        "\n",
+        "# import politics as pcs\n",
+        "#\n",
+        "# parl = pcs.Parliament(\"Increase NHS funding\")\n",
+        "# party1 = pcs.Party(\"Labour\", \"Increase NHS funding\")\n",
+        "# party2 = pcs.Party(\"Conservative\", \"Cut taxes\")\n",
+        "#\n",
+        "# p1 = pcs.Politician(42, party1)\n",
+        "# p2 = pcs.Politician(55, party2)\n",
+        "# p3 = pcs.President(party1, 61, \"UK\")\n",
+        "#\n",
+        "# parl.add_member(p1)\n",
+        "# parl.add_member(p2)\n",
+        "# parl.add_member(p3)\n",
+        "#\n",
+        "# parl.hold_vote()\n",
+        "# print(parl.pass_law())\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "\n",
+        "# **Summary**\n",
+        "\n",
+        "| Concept | What it does | Example |\n",
+        "|---------|-------------|----------|\n",
+        "| **Class** | Blueprint for creating objects | `class Politician:` |\n",
+        "| **Instance** | A specific object created from a class | `p = Politician(\"Labour\", 42)` |\n",
+        "| **Instance attribute** | Data unique to each instance | `self.party = party` |\n",
+        "| **Class attribute** | Data shared across all instances | `instance_count = 0` |\n",
+        "| **Instance method** | Function operating on an instance (takes `self`) | `def make_speech(self):` |\n",
+        "| **Class method** | Function operating on the class (takes `cls`) | `@classmethod def show_count(cls):` |\n",
+        "| **Special method** | Dunder methods for built-in operations | `__str__`, `__len__`, `__init__` |\n",
+        "| **Inheritance** | Child class takes on parent's attributes/methods | `class President(Politician):` |\n",
+        "| **`super()`** | Calls the parent class's method | `super().__init__(party, age)` |\n",
+        "| **Override** | Child redefines a parent's method | Defining `__str__` in both classes |\n",
+        "| **Composition** | Object contains other objects as attributes | `self.party = Party(...)` |\n",
+        "\n",
+        "### What's next\n",
+        "\n",
+        "In **Week 6**, you'll use scikit-learn, where every model is a class: you create an instance (`model = LinearRegression()`), fit it (`model.fit(X, y)`), and predict (`model.predict(X_new)`). The patterns you learned today are exactly how these libraries are structured.\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### Suggested readings\n",
+        "\n",
+        "- Martelli, Ravenscroft, Holden & McGuire (2023). *Python in a Nutshell*, Chapter 4.\n",
+        "- [Object-Oriented Programming (OOP) in Python](https://realpython.com/python3-object-oriented-programming/).\n",
+        "- [Python Documentation: Classes](https://docs.python.org/3/tutorial/classes.html).\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "\n",
+        "# **Solutions**\n",
+        "\n",
+        "Click the arrow to expand each solution cell.\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "cellView": "form"
+      },
+      "outputs": [],
+      "source": [
+        "#@title Exercise 1 Solutions\n",
+        "\n",
+        "# 1a)\n",
+        "class Country:\n",
+        "    \"\"\"A simple model of a country.\"\"\"\n",
+        "\n",
+        "    country_count = 0  # 1c: class attribute\n",
+        "\n",
+        "    def __init__(self, name, population, region):\n",
+        "        self.name = name\n",
+        "        self.population = population  # millions\n",
+        "        self.region = region\n",
+        "        Country.country_count += 1\n",
+        "\n",
+        "\n",
+        "# 1b)\n",
+        "uk = Country(\"UK\", 67, \"Europe\")\n",
+        "france = Country(\"France\", 68, \"Europe\")\n",
+        "brazil = Country(\"Brazil\", 214, \"South America\")\n",
+        "\n",
+        "for c in [uk, france, brazil]:\n",
+        "    print(f\"{c.name}: {c.population}M\")\n",
+        "\n",
+        "# 1c)\n",
+        "print(f\"Total countries: {Country.country_count}\")  # 3\n",
+        "\n",
+        "# 1d)\n",
+        "print(type(uk))                    # <class '__main__.Country'>\n",
+        "print(isinstance(uk, Country))     # True\n"
+=======
       "cell_type": "code",
       "execution_count": null,
       "metadata": {
@@ -793,13 +1040,19 @@
       "source": [
         "\n",
         "\n"
+>>>>>>> 8652ee0 (Finish off W5)
       ]
     },
     {
       "cell_type": "code",
       "execution_count": null,
       "metadata": {
+<<<<<<< HEAD
         "cellView": "form"
+=======
+        "cellView": "form",
+        "id": "2bFuKQGszvGA"
+>>>>>>> 8652ee0 (Finish off W5)
       },
       "outputs": [],
       "source": [
@@ -875,6 +1128,33 @@
         "        super().__init__(party, age)\n",
         "        self.country = country\n",
         "\n",
+<<<<<<< HEAD
+        "    # 3b)\n",
+        "    def call_election(self):\n",
+        "        print(f\"PM of {self.country} calls a general election!\")\n",
+        "\n",
+        "    # 3c)\n",
+        "    def __str__(self):\n",
+        "        return f\"PM of {self.country} ({self.party}, age {self.age})\"\n",
+        "\n",
+        "\n",
+        "# 3d)\n",
+        "p1 = Politician(\"Conservative\", 55)\n",
+        "p2 = Politician(\"Labour\", 38)\n",
+        "pm = PrimeMinister(\"Labour\", 42, \"UK\")\n",
+        "\n",
+        "for person in [p1, p2, pm]:\n",
+        "    person.make_speech()  # all respond, using their class's version\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "cellView": "form"
+      },
+      "outputs": [],
+=======
         "    def make_policy(self):\n",
         "        return f\"President signed some policy\""
       ]
@@ -884,9 +1164,15 @@
       "metadata": {
         "id": "lWPq2b4FQmGV"
       },
+>>>>>>> 8652ee0 (Finish off W5)
       "source": [
         "#@title Exercise 4 Solutions\n",
         "\n",
+<<<<<<< HEAD
+        "# 4a)\n",
+        "class Strategy:\n",
+        "    \"\"\"A campaign strategy.\"\"\"\n",
+=======
         "The `super()` function in Python is used to call a method from the parent class inside a child class. It is most commonly used in the `__init__()` method to ensure the parent's initialisation logic runs properly. However, it can also be used to call any method from the parent class.\n"
       ]
     },
@@ -897,17 +1183,53 @@
       },
       "source": [
         "**Override Methods from the Parent Class**\n",
+>>>>>>> 8652ee0 (Finish off W5)
         "\n",
         "    def __init__(self, approach):\n",
         "        self.approach = approach\n",
         "\n",
+<<<<<<< HEAD
+        "    def execute(self):\n",
+        "        print(f\"Running {self.approach} campaign\")\n",
+        "\n",
+        "\n",
+        "# 4b)\n",
+        "class Campaign:\n",
+        "    \"\"\"An election campaign composed with a Strategy.\"\"\"\n",
+        "\n",
+        "    def __init__(self, candidate_name, district, strategy):\n",
+        "        self.candidate_name = candidate_name\n",
+        "        self.district = district\n",
+        "        self.strategy = strategy  # composition: Campaign HAS A Strategy\n",
+        "\n",
+        "    # 4c)\n",
+        "    def launch(self):\n",
+        "        print(f\"{self.candidate_name} in {self.district}:\")\n",
+        "        self.strategy.execute()\n",
+        "\n",
+        "\n",
+        "# 4d)\n",
+        "c1 = Campaign(\"Alice Smith\", \"Oxford East\", Strategy(\"grassroots\"))\n",
+        "c2 = Campaign(\"Bob Jones\", \"Manchester Central\", Strategy(\"media blitz\"))\n",
+        "\n",
+        "c1.launch()  # Alice Smith in Oxford East: Running grassroots campaign\n",
+        "c2.launch()  # Bob Jones in Manchester Central: Running media blitz campaign\n"
+=======
         "Source: [Python Crash Course](https://learning.oreilly.com/library/view/python-crash-course/9781098156664/)."
+>>>>>>> 8652ee0 (Finish off W5)
       ]
     },
     {
       "cell_type": "code",
       "execution_count": null,
       "metadata": {
+<<<<<<< HEAD
+        "cellView": "form"
+      },
+      "outputs": [],
+      "source": [
+        "#@title Capstone Solutions\n",
+=======
         "id": "pba-IHVYSONX"
       },
       "outputs": [],
@@ -1029,6 +1351,7 @@
       "outputs": [],
       "source": [
         "#@title Example Composition\n",
+>>>>>>> 8652ee0 (Finish off W5)
         "\n",
         "class Party:\n",
         "    \"\"\"A political party.\"\"\"\n",
@@ -1109,6 +1432,11 @@
         "for member in [p1, p2, p3, p4, p5]:\n",
         "    parl.add_member(member)\n",
         "\n",
+<<<<<<< HEAD
+        "yes_votes = parl.hold_vote()\n",
+        "print(f\"Yes votes: {yes_votes}/{len(parl.members)}\")\n",
+        "print(parl.pass_law())"
+=======
         "    def __str__(self):\n",
         "        return \"Im the President!\"\n",
         "\n",
@@ -1233,14 +1561,21 @@
         "\n",
         "parl.calculate_votes()\n",
         "parl.make_law()"
+>>>>>>> 8652ee0 (Finish off W5)
       ]
     }
   ],
   "metadata": {
     "colab": {
+<<<<<<< HEAD
       "include_colab_link": true,
       "provenance": [],
       "toc_visible": true
+=======
+      "authorship_tag": "ABX9TyO/tT20OacCVLPxRgfK5SJr",
+      "include_colab_link": true,
+      "provenance": []
+>>>>>>> 8652ee0 (Finish off W5)
     },
     "kernelspec": {
       "display_name": "Python 3",
